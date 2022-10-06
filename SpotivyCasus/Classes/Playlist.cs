@@ -8,10 +8,10 @@ namespace SpotivyCasus.Classes
 {
     internal class Playlist
     {
-        private Person owner;
+        private Person _owner;
         private string playlistName;
 
-        public Person Owner { get => owner; set => owner = value; }
+        public Person Owner { get => _owner; set => _owner = value; }
         public string PlaylistName { get => playlistName; set => playlistName = value; }
 
         public Playlist(Person owner, string name) 
