@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using SpotivyCasus.Interfaces;
 namespace SpotivyCasus.Classes
 {
     enum Genre 
@@ -16,7 +17,7 @@ namespace SpotivyCasus.Classes
         Pop,
     }
 
-    internal class Song
+    internal class Song : iPlayable
     {
         private string title;
         private List<Artist> artists;
@@ -46,6 +47,31 @@ namespace SpotivyCasus.Classes
             Artists.ForEach((a) => { AllArtists += (a + " | "); });
 
             return Title + " || " + AllArtists + min + "." + sec;
+        }
+
+        public void Play()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Pause()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Stop()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Next()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Length()
+        {
+            throw new NotImplementedException();
         }
     }
 }

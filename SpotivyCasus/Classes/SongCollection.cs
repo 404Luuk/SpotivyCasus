@@ -7,13 +7,12 @@ using SpotivyCasus.Interfaces;
 
 namespace SpotivyCasus.Classes
 {
-    internal class SongCollection
+    internal class SongCollection : iPlayable
     {
         private string title;
-        private List<iPlayable> playables;
+        protected List<iPlayable> playables;
         
         public string Title { get => title; set => title = value; }
-        public List<iPlayable> Playables { get => playables; set => playables = value; }
     
         public SongCollection(string title) 
         {
@@ -25,6 +24,31 @@ namespace SpotivyCasus.Classes
         public override string ToString()
         {
             return title;
+        }
+
+        public void Play()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Pause()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Stop()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Next()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Length()
+        {
+            throw new NotImplementedException();
         }
     }
 }

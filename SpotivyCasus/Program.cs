@@ -23,6 +23,12 @@ namespace SpotivyCasus
                 artists.Add(niels);
 
                 Song song = new Song("Beat01", artists, 156, Genre.Rap);
+                Playlist pl = new Playlist(new Person(), "Luuk zijn playlist");
+                Album album = new Album();
+                pl.Add(song);
+                pl.Add(album);
+
+                pl.Add(pl);
 
                 Console.WriteLine(song);
             }
