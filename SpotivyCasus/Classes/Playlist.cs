@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SpotivyCasus.Interfaces;
 
 namespace SpotivyCasus.Classes
 {
-    internal class Playlist
+    internal class Playlist : SongCollection
     {
         private Person owner;
-        private string playlistName;
 
         public Person Owner { get => owner; set => owner = value; }
-        public string PlaylistName { get => playlistName; set => playlistName = value; }
 
-        public Playlist(Person owner, string name) 
+        public Playlist(Person owner, string name) : base(name)
         {
             Owner = owner;
-            PlaylistName = name;   
+        }
+
+        public void Add(iPlayable playable)
+        {
+            playables.Add(playable);
         }
     }
 }
