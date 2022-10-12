@@ -19,8 +19,6 @@ namespace SpotivyCasus.Classes
             Title = title;
         }
 
-
-
         public override string ToString()
         {
             return title;

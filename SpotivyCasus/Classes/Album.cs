@@ -7,8 +7,19 @@ using SpotivyCasus.Interfaces;
 
 namespace SpotivyCasus.Classes
 {
-    internal class Album : iPlayable
+    internal class Album : SongCollection, iPlayable
     {
+        private List<Artist> artists;
+
+        public Album(List<Artist> albumArtists, string title, List<Song> songs) : base(title) 
+        {
+            artists = albumArtists;
+            songs.ForEach((song) =>
+            {
+                playables.Add(song);
+            });
+        }
+
         public int Length()
         {
             throw new NotImplementedException();

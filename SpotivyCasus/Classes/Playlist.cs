@@ -22,5 +22,17 @@ namespace SpotivyCasus.Classes
         {
             playables.Add(playable);
         }
+
+        public void Remove(iPlayable playable) 
+        {
+            playables.Remove(playable);
+        }
+
+        public override string ToString()
+        {
+            return Title + " || " + Owner;
+        }
+
+
     }
 }
