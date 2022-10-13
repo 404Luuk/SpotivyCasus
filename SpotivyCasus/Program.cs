@@ -12,7 +12,13 @@ namespace SpotivyCasus
 
             if (debug) 
             {
-                // testing
+                Artist luuk = new Artist("Luuk");
+                List<Artist> artists = new List<Artist>();
+                artists.Add(luuk);
+
+                Song one = new Song("one", artists, 133, Genre.urban);
+
+                one.Play();
             }
 
 

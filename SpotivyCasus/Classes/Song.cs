@@ -51,7 +51,14 @@ namespace SpotivyCasus.Classes
 
         public void Play()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < duration; i++) 
+            {
+                duration -= 1;
+
+                Console.WriteLine(this);
+                Thread.Sleep(999);
+                Console.Clear();
+            }
         }
 
         public void Pause()
