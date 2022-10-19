@@ -13,6 +13,7 @@ namespace SpotivyCasus.Classes
         private int       currentTime;
         private bool      playing;
         private bool      shuffle;
+        private bool      repeat;
         private SuperUser     activeUser;
         private List<Album>   allAlbums;
         private List<Song>    allSongs;
@@ -21,12 +22,13 @@ namespace SpotivyCasus.Classes
         public int CurrentTime { get => currentTime; set => currentTime = value; }
         public bool Playing { get => playing; set => playing = value; }
         public bool Shuffle { get => shuffle; set => shuffle = value; }
+        public bool Repeat { get => repeat; set => repeat = value; }
         internal iPlayable CurrentPlaying { get => currentPlaying; set => currentPlaying = value; }
         internal SuperUser ActiveUser { get => activeUser; set => activeUser = value; }
         internal List<Album> AllAlbums { get => allAlbums; set => allAlbums = value; }
         internal List<Song> AllSongs { get => allSongs; set => allSongs = value; }
         internal List<Person> AllUsers { get => allUsers; set => allUsers = value; }
-
+      
 
         public Client(List<Person> people, List<Album> albums, List<Song> songs) 
         {
@@ -112,7 +114,7 @@ namespace SpotivyCasus.Classes
             ActiveUser.ShowFriendlist();
         }
 
-        public void SelectFriends() 
+        public void SelectFriend() 
         {
             // todo
         }
@@ -150,6 +152,16 @@ namespace SpotivyCasus.Classes
         public int Length()
         {
             throw new NotImplementedException();
+        }
+
+        public void SetShuffle(bool val) 
+        {
+            Shuffle = val;
+        }
+
+        public void SetRepeat(bool val)
+        {
+            Repeat = val;
         }
     }
 }

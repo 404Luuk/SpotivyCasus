@@ -24,6 +24,11 @@ namespace SpotivyCasus.Classes
             return title;
         }
 
+        public List<iPlayable> ShowPlayables() 
+        {
+            return playables;
+        }
+
         public void Play()
         {
             throw new NotImplementedException();

@@ -51,34 +51,31 @@ namespace SpotivyCasus.Classes
 
         public void Play()
         {
-            for (int i = 0; i < duration; i++) 
-            {
-                duration -= 1;
-
-                Console.WriteLine(this);
-                Thread.Sleep(999);
-                Console.Clear();
-            }
+            Console.WriteLine("Currently playing: ");
+            Console.WriteLine(this);
         }
 
+        // Feature still in prototyping
         public void Pause()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("- Song has been paused -");
         }
+
 
         public void Stop()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("- Song has been stopped -");
         }
 
         public void Next()
         {
-            throw new NotImplementedException();
+            Play();
         }
 
+        // Returns duration of song
         public int Length()
         {
-            throw new NotImplementedException();
+            return Duration;
         }
     }
 }
