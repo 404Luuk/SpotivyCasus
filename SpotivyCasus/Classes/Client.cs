@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using SpotivyCasus.Interfaces;
 
 namespace SpotivyCasus.Classes
@@ -14,7 +15,7 @@ namespace SpotivyCasus.Classes
         private bool      playing;
         private bool      shuffle;
         private bool      repeat;
-        private SuperUser     activeUser;
+        protected SuperUser     activeUser;
         private List<Album>   allAlbums;
         private List<Song>    allSongs;
         private List<Person>  allUsers;
@@ -38,7 +39,11 @@ namespace SpotivyCasus.Classes
         }
 
         // Take user given as parameter and sets it as ActiveUser
-        public void SetActiveUser(Person user) { ActiveUser = (SuperUser)user; }
+        public void SetActiveUser(Person user) 
+        {
+            var serializedParent = JsonConvert.SerializeObject(user);
+            ActiveUser = JsonConvert.DeserializeObject<SuperUser>(serializedParent);
+        }
 
         // Logs all albums in list
         public void ShowAllAlbums() 
@@ -70,49 +75,37 @@ namespace SpotivyCasus.Classes
             });
         }
 
-
+        //Show playlists of active user
         public void ShowUserPlaylists()
-        {
-            ActiveUser.ShowPlaylist();
-        }
+        => ActiveUser.ShowPlaylist();
 
+        //
         public void SelectUserPlaylist(int index)
-        {
-            AllUsers[index].ShowPlaylist();
-        }
+        => AllUsers[index].ShowPlaylist();
 
-        public void SelectAlbum(int index) { Console.WriteLine(AllAlbums[index]); }
+        public void SelectAlbum(int index) => Console.WriteLine(AllAlbums[index]);
 
-        public void SelectSong(int index) { Console.WriteLine(AllSongs[index]); }
+        public void SelectSong(int index) => Console.WriteLine(AllSongs[index]);
 
-        public void SelectUser(int index) { Console.WriteLine(AllUsers[index]); }
+        public void SelectUser(int index) => Console.WriteLine(AllUsers[index]);
 
     
 
         public void CreatePlaylist(string title) 
-        {
-            ActiveUser.CreatePlaylist(title);
-        }
+        => ActiveUser.CreatePlaylist(title);
 
         public void ShowPlaylists() 
-        {
-            ActiveUser.ShowPlaylist();
-        }
+        => ActiveUser.ShowPlaylist();
 
         public void SelectPlaylist(int index) 
-        {
-            ActiveUser.SelectPlaylist(index);
-        }
+        => ActiveUser.SelectPlaylist(index);
 
         public void RemovePlaylist(int index)
-        {
-            ActiveUser.RemovePlaylist(index);   
-        }
+        => ActiveUser.RemovePlaylist(index);
 
         public void ShowFriends() 
-        {
-            ActiveUser.ShowFriendlist();
-        }
+        => ActiveUser.ShowFriendlist();
+
 
         public void SelectFriend() 
         {
@@ -120,14 +113,10 @@ namespace SpotivyCasus.Classes
         }
 
         public void AddFriend(int index) 
-        {
-            ActiveUser.AddFriend(AllUsers[index]);
-        }
+        => ActiveUser.AddFriend(AllUsers[index]);
 
         public void RemoveFriend(int index) 
-        {
-            ActiveUser.RemoveFriend(AllUsers[index]);
-        }
+        => ActiveUser.RemoveFriend(AllUsers[index]);
 
         public void Play()
         {

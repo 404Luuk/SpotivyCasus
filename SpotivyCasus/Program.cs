@@ -2,42 +2,49 @@
 using SpotivyCasus.Classes;
 using SpotivyCasus.Interfaces;
 
-namespace SpotivyCasus 
+namespace SpotivyCasus
 {
-    internal class Program 
+    internal class Program
     {
         static void Main(string[] args)
         {
-            /// Creating data to work with
+            /// Creating data to work with ///
+            
+            //creating new users
+            Person luuk = new("Luuk");
+            Person robert = new("Robert");
+            Person hendrik = new("Hendrik");
 
-            Person luuk = new Person("Luuk");
-            Person robert = new Person("Robert");
-            Person hendrik = new Person("Hendrik");
+            //creating new artists
+            Artist bob = new("bob");
+            Artist jim = new("jim");
+            Artist jesus = new("jesus");
+            Artist slimshady = new("Marshall Maters");
 
-            Artist bob = new Artist("bob");
-            Artist jim = new Artist("jim");
-            Artist jesus = new Artist("jesus");
-            Artist slimshady = new Artist("Marshall Maters");
+            //creating lists or artists
+            List<Artist> artists_one = new();
+            List<Artist> artists_two = new();
 
-            List<Artist> artists_one = new List<Artist>();
-            List<Artist> artists_two = new List<Artist>();
-
+            //adding artists to list
             artists_one.Add(bob);
             artists_one.Add(jim);
 
             artists_two.Add(jesus);
             artists_two.Add(slimshady);
 
-            Song eminem = new Song("eminem", artists_one, 155, Genre.Rap);
-            Song raindrops = new Song("raindrops", artists_one, 188, Genre.urban);
+            //creating new songs
+            Song eminem = new("eminem", artists_one, 155, Genre.Rap);
+            Song raindrops = new("raindrops", artists_one, 188, Genre.urban);
 
-            Song poland = new Song("poland", artists_two, 110, Genre.Rap);
-            Song glitz = new Song("glitz", artists_two, 90, Genre.Pop);
+            Song poland = new("poland", artists_two, 110, Genre.Rap);
+            Song glitz = new("glitz", artists_two, 90, Genre.Pop);
 
-            List<Song> songs1 = new List<Song>();
-            List<Song> songs2 = new List<Song>();
-            List<Song> allSongs = new List<Song>();
+            //creating new lists for songs
+            List<Song> songs1 = new();
+            List<Song> songs2 = new();
+            List<Song> allSongs = new();
 
+            //adding songs to lists
             songs1.Add(eminem);
             songs2.Add(raindrops);
 
@@ -49,38 +56,36 @@ namespace SpotivyCasus
             allSongs.Add(poland);
             allSongs.Add(glitz);
 
-            Album album1 = new Album(artists_one, "album1", songs1);
-            Album album2 = new Album(artists_two, "album2", songs2);
+            //creating new albums  
+            Album album1 = new(artists_one, "album1", songs1);
+            Album album2 = new(artists_two, "album2", songs2);
 
-            List<Person> allUsers = new List<Person>();
+            //Creating new list of users
+            List<Person> allUsers = new();
             allUsers.Add(luuk);
             allUsers.Add(robert);
             allUsers.Add(hendrik);
 
-            List<Album> allAlbums = new List<Album>();
+            //creating a new list of albums
+            List<Album> allAlbums = new();
             allAlbums.Add(album1);
             allAlbums.Add(album2);
 
-            Client client = new Client(allUsers, allAlbums, allSongs);
+            //creating a new client with all the users, songs, and albums
+            Client client = new(allUsers, allAlbums, allSongs);
             client.SetActiveUser(luuk);
 
-           
-
-            bool isRunning = true;
-            while (isRunning) 
-            {
-
-
             
+            client.ShowAllAlbums(); Console.WriteLine("\n");
 
-            
-            
-            
-            }
+            client.ShowAllSongs(); Console.WriteLine("\n");
+
+            client.ShowAllUsers(); Console.WriteLine("\n");
+
+
+
+
+
         }
-
-     
-
-
-    }
+    } 
 }

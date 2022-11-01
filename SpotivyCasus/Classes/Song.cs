@@ -17,7 +17,7 @@ namespace SpotivyCasus.Classes
         Pop,
     }
 
-    internal class Song : iPlayable
+    class Song : iPlayable
     {
         private string title;
         private List<Artist> artists;
@@ -38,6 +38,7 @@ namespace SpotivyCasus.Classes
             SongGenre = genre;
         }
 
+        //Shows songs name and title
         public override string ToString()
         {
             string AllArtists = "";
@@ -55,27 +56,17 @@ namespace SpotivyCasus.Classes
             Console.WriteLine(this);
         }
 
-        // Feature still in prototyping
+        // Feature still in development
         public void Pause()
-        {
-            Console.WriteLine("- Song has been paused -");
-        }
+        => Console.WriteLine("- Song has been paused -");
 
 
         public void Stop()
-        {
-            Console.WriteLine("- Song has been stopped -");
-        }
+        => Console.WriteLine("- Song has been stopped -");
 
-        public void Next()
-        {
-            Play();
-        }
+        public void Next() => Play();
 
         // Returns duration of song
-        public int Length()
-        {
-            return Duration;
-        }
+        public int Length() => Duration;
     }
 }

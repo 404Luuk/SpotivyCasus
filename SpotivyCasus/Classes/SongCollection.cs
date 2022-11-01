@@ -10,10 +10,10 @@ namespace SpotivyCasus.Classes
     internal class SongCollection : iPlayable
     {
         private string title;
-        protected List<iPlayable> playables;
+        protected List<iPlayable> playables = new List<iPlayable>();
         
         public string Title { get => title; set => title = value; }
-    
+
         public SongCollection(string title) 
         {
             Title = title;
