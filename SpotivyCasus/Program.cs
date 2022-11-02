@@ -89,6 +89,9 @@ namespace SpotivyCasus
             client.ActiveUser.AddToPlaylist(eminem, 0);
             client.ActiveUser.AddToPlaylist(raindrops, 0);
 
+            //User removes song from playlist
+            client.ActiveUser.RemoveFromPlaylist(raindrops, 0);
+
 
         }
     } 
