@@ -108,7 +108,7 @@ namespace SpotivyCasus.Classes
         => ActiveUser.ShowFriendlist().ForEach((friend)=> { Console.WriteLine(friend); });
 
 
-        public void SelectFriend(int index)
+        public void SelectFriend(int index) // added index
         => Console.WriteLine(ActiveUser.Friends[index].ToString());
 
         public void AddFriend(int index) 

@@ -51,7 +51,7 @@ namespace SpotivyCasus.Classes
         }
 
         // Adds playable to playlist at the list index
-        public void AddToPlaylist(iPlayable playable, int index) 
+        public void AddToPlaylist(iPlayable playable, int index) //added index
         {
             SelectPlaylist(index).Add(playable);
             Console.WriteLine("Added " + playable + " to playlist");
