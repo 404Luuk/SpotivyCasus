@@ -10,7 +10,7 @@ namespace SpotivyCasus.Classes
     {
         private string name;
         private List<Person> friends;
-        private List<Playlist> playlists;
+        protected List<Playlist> playlists = new List<Playlist>();
 
         public string Name { get => name; set => name = value; }
         internal List<Person> Friends { get => friends; set => friends = value; }

@@ -46,12 +46,14 @@ namespace SpotivyCasus.Classes
         public void AddToPlaylist(iPlayable playable, int index) 
         {
             SelectPlaylist(index).Add(playable);
+            Console.WriteLine("Added " + playable + " to playlist");
         }
 
         // Removes playable from playlist at list index
         public void RemoveFromPlaylist(iPlayable playable, int index) 
         {
             SelectPlaylist(index).Remove(playable);
+            Console.WriteLine("Removed " + playable + " from playlist");
         }
 
     }

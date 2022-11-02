@@ -75,15 +75,14 @@ namespace SpotivyCasus
             Client client = new(allUsers, allAlbums, allSongs);
             client.SetActiveUser(luuk);
 
-            
-            client.ShowAllAlbums(); Console.WriteLine("\n");
 
-            client.ShowAllSongs(); Console.WriteLine("\n");
-
-            client.ShowAllUsers(); Console.WriteLine("\n");
+            //  User story actions  //
 
 
-
+            //User makes playlist
+            client.CreatePlaylist("Rap");
+            client.CreatePlaylist("Classical");
+            client.CreatePlaylist("Modern");
 
 
         }

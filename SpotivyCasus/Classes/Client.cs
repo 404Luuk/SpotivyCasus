@@ -10,39 +10,39 @@ namespace SpotivyCasus.Classes
 {
     internal class Client : iPlayable
     {
-        private iPlayable currentPlaying;
+        protected iPlayable currentPlaying;
         private int       currentTime;
         private bool      playing;
         private bool      shuffle;
         private bool      repeat;
         protected SuperUser     activeUser;
-        private List<Album>   allAlbums;
-        private List<Song>    allSongs;
-        private List<Person>  allUsers;
+        protected List<Album>   allAlbums;
+        protected List<Song>    allSongs;
+        protected List<Person>  allUsers;
 
         public int CurrentTime { get => currentTime; set => currentTime = value; }
         public bool Playing { get => playing; set => playing = value; }
         public bool Shuffle { get => shuffle; set => shuffle = value; }
         public bool Repeat { get => repeat; set => repeat = value; }
         internal iPlayable CurrentPlaying { get => currentPlaying; set => currentPlaying = value; }
-        internal SuperUser ActiveUser { get => activeUser; set => activeUser = value; }
-        internal List<Album> AllAlbums { get => allAlbums; set => allAlbums = value; }
-        internal List<Song> AllSongs { get => allSongs; set => allSongs = value; }
-        internal List<Person> AllUsers { get => allUsers; set => allUsers = value; }
+        internal SuperUser ActiveUser { get => activeUser;  }
+        internal List<Album> AllAlbums { get => allAlbums;  }
+        internal List<Song> AllSongs { get => allSongs;  }
+        internal List<Person> AllUsers { get => allUsers; }
       
 
         public Client(List<Person> people, List<Album> albums, List<Song> songs) 
         {
-            AllAlbums = albums;
-            AllSongs = songs;
-            AllUsers = people;
+            allAlbums = albums;
+            allSongs = songs;
+            allUsers = people;
         }
 
         // Take user given as parameter and sets it as ActiveUser
         public void SetActiveUser(Person user) 
         {
             var serializedParent = JsonConvert.SerializeObject(user);
-            ActiveUser = JsonConvert.DeserializeObject<SuperUser>(serializedParent);
+            activeUser = JsonConvert.DeserializeObject<SuperUser>(serializedParent);
         }
 
         // Logs all albums in list
@@ -95,7 +95,7 @@ namespace SpotivyCasus.Classes
         => ActiveUser.CreatePlaylist(title);
 
         public void ShowPlaylists() 
-        => ActiveUser.ShowPlaylist();
+        => ActiveUser.ShowPlaylist().ForEach((list)=> { Console.WriteLine(list); });
 
         public void SelectPlaylist(int index) 
         => ActiveUser.SelectPlaylist(index);
