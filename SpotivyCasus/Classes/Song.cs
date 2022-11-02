@@ -58,11 +58,11 @@ namespace SpotivyCasus.Classes
 
         // Feature still in development
         public void Pause()
-        => Console.WriteLine("- Song has been paused -");
+        => Console.WriteLine(this + " has been paused");
 
 
         public void Stop()
-        => Console.WriteLine("- Song has been stopped -");
+        => Console.WriteLine(this + " has been stopped");
 
         public void Next() => Play();
 

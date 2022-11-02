@@ -101,8 +101,11 @@ namespace SpotivyCasus
             //User can play a playlist
             client.ActiveUser.SelectPlaylist(0).Play();
 
-            //User can play a song
+            //User can play a selected song
             client.AllSongs[3].Play();
+
+            //User can pause a song
+            client.AllSongs[3].Pause();
 
 
         }
