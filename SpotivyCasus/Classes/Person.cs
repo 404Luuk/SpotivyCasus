@@ -9,7 +9,7 @@ namespace SpotivyCasus.Classes
     internal class Person
     {
         private string name;
-        private List<Person> friends;
+        private List<Person> friends = new List<Person>();
         protected List<Playlist> playlists = new List<Playlist>();
 
         public string Name { get => name; set => name = value; }
@@ -38,6 +38,14 @@ namespace SpotivyCasus.Classes
 
         public override string ToString()
         {
+            //string Friendstring = "";
+            //string Lists = "";
+
+
+            //Friends.ForEach((friend) => { Friendstring += friend + ", "; });    
+            //playlists.ForEach((list) => { Lists += list + ", "; });
+
+            //return Name + " | " + Friendstring + " | " + Lists;
             return Name;
         }
     }

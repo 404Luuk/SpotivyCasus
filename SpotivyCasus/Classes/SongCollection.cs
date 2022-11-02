@@ -31,22 +31,22 @@ namespace SpotivyCasus.Classes
 
         public void Play()
         {
-            throw new NotImplementedException();
+            playables[0].Play();
         }
 
         public void Pause()
         {
-            throw new NotImplementedException();
+            playables[0].Pause();
         }
 
         public void Stop()
         {
-            throw new NotImplementedException();
+            playables[0].Stop();
         }
 
         public void Next()
         {
-            throw new NotImplementedException();
+            playables[0].Next();
         }
 
         public int Length()

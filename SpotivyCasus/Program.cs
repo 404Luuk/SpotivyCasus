@@ -98,6 +98,9 @@ namespace SpotivyCasus
             //User can delete playlist
             client.ActiveUser.RemovePlaylist(2);
 
+            //User can play a playlist
+            client.ActiveUser.SelectPlaylist(0).Play();
+
 
 
         }

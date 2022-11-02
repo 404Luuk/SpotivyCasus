@@ -30,7 +30,7 @@ namespace SpotivyCasus.Classes
 
         public override string ToString()
         {
-            return Title + " || " + Owner;
+            return Title + " | " + Owner;
         }
 
 

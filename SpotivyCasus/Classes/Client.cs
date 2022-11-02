@@ -16,9 +16,9 @@ namespace SpotivyCasus.Classes
         private bool      shuffle;
         private bool      repeat;
         protected SuperUser     activeUser;
-        protected List<Album>   allAlbums;
-        protected List<Song>    allSongs;
-        protected List<Person>  allUsers;
+        protected List<Album>   allAlbums = new List<Album>();
+        protected List<Song>    allSongs = new List<Song>();
+        protected List<Person>  allUsers = new List<Person>();
 
         public int CurrentTime { get => currentTime; set => currentTime = value; }
         public bool Playing { get => playing; set => playing = value; }
@@ -36,6 +36,7 @@ namespace SpotivyCasus.Classes
             allAlbums = albums;
             allSongs = songs;
             allUsers = people;
+            currentPlaying = allSongs[0];
         }
 
         // Take user given as parameter and sets it as ActiveUser
@@ -120,27 +121,27 @@ namespace SpotivyCasus.Classes
 
         public void Play()
         {
-            throw new NotImplementedException();
+            currentPlaying.Play();
         }
 
         public void Pause()
         {
-            throw new NotImplementedException();
+            currentPlaying.Pause();
         }
 
         public void Stop()
         {
-            throw new NotImplementedException();
+            currentPlaying.Stop();
         }
 
         public void Next()
         {
-            throw new NotImplementedException();
+            currentPlaying.Next();
         }
 
         public int Length()
         {
-            throw new NotImplementedException();
+            return currentPlaying.Length();
         }
 
         public void SetShuffle(bool val) 

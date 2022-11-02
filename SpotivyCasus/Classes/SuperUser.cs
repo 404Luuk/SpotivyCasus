@@ -15,12 +15,17 @@ namespace SpotivyCasus.Classes
         public void AddFriend(Person friend)
         {
             Friends.Add(friend);
+            Console.WriteLine("Friend added: " + friend);
         }
 
         // Removes given person from users friendlist
         public void RemoveFriend(Person friend) 
         {
-            if (Friends.Contains(friend)) { Friends.Remove(friend); }
+            if (Friends.Contains(friend)) 
+            {
+                Friends.Remove(friend);
+                Console.WriteLine("Friend removed: " + friend);
+            }
             else
             {
                 throw new ArgumentOutOfRangeException();
