@@ -116,6 +116,9 @@ namespace SpotivyCasus
 
             //User can remove friend from list
             client.ActiveUser.RemoveFriend(hendrik); // :(
+
+            //User can see song name, artist and length in a song
+            client.AllSongs[1].Play();
         }
     } 
 }

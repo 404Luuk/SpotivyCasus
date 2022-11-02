@@ -12,6 +12,8 @@ namespace SpotivyCasus.Classes
         private string title;
         protected List<iPlayable> playables = new List<iPlayable>();
 
+        public List<iPlayable> Playables { get => playables; }
+
         public string Title { get => title; set => title = value; }
 
         public SongCollection(string title) 
