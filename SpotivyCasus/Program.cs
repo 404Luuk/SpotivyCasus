@@ -92,7 +92,7 @@ namespace SpotivyCasus
             //User removes song from playlist
             client.ActiveUser.RemoveFromPlaylist(raindrops, 0);
 
-            //User views all owned playlists
+            //User has list and can view all owned playlists
             client.ShowPlaylists();
 
             //User can delete playlist
@@ -101,6 +101,8 @@ namespace SpotivyCasus
             //User can play a playlist
             client.ActiveUser.SelectPlaylist(0).Play();
 
+            //User can play a song
+            client.AllSongs[3].Play();
 
 
         }
