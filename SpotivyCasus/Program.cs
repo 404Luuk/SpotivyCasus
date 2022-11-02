@@ -107,6 +107,11 @@ namespace SpotivyCasus
             //User can pause a song
             client.AllSongs[3].Pause();
 
+            //User can add friends
+            client.ActiveUser.AddFriend(robert);
+            client.ActiveUser.AddFriend(hendrik);
+
+
 
         }
     } 
