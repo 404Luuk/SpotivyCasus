@@ -7,7 +7,7 @@ using SpotivyCasus.Interfaces;
 
 namespace SpotivyCasus.Classes
 {
-    internal class Album : SongCollection, iPlayable
+    internal class Album : SongCollection
     {
         private List<Artist> artists;
 
@@ -27,29 +27,12 @@ namespace SpotivyCasus.Classes
             return Artists;
         }
 
-        public int Length()
+        public override string ToString() 
         {
-            throw new NotImplementedException();
-        }
+            string artistList = "";
+            Artists.ForEach((A) => { artistList += A + " | "; });
 
-        public void Next()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Pause()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Play()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Stop()
-        {
-            throw new NotImplementedException();
+            return Title + " || " + artistList;
         }
     }
 }

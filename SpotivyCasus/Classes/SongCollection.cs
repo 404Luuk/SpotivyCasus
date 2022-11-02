@@ -53,7 +53,10 @@ namespace SpotivyCasus.Classes
 
         public int Length()
         {
-            throw new NotImplementedException();
+            int total = 0;
+            Playables.ForEach((p) => { total += p.Length(); });
+
+            return total;
         }
     }
 }

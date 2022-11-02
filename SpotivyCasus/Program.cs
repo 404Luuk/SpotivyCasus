@@ -84,6 +84,8 @@ namespace SpotivyCasus
             client.CreatePlaylist("Classical");
             client.CreatePlaylist("Modern");
 
+            //User can add album to a playlist
+            client.ActiveUser.SelectPlaylist(0).Add(album1);
 
             //User adds songs to playlist
             client.ActiveUser.AddToPlaylist(eminem, 0);
@@ -119,6 +121,9 @@ namespace SpotivyCasus
 
             //User can see song name, artist and length in a song
             client.AllSongs[1].Play();
+
+
+            
         }
     } 
 }

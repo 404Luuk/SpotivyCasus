@@ -108,10 +108,8 @@ namespace SpotivyCasus.Classes
         => ActiveUser.ShowFriendlist().ForEach((friend)=> { Console.WriteLine(friend); });
 
 
-        public void SelectFriend() 
-        {
-            // todo
-        }
+        public void SelectFriend(int index)
+        => Console.WriteLine(ActiveUser.Friends[index].ToString());
 
         public void AddFriend(int index) 
         => ActiveUser.AddFriend(AllUsers[index]);
@@ -119,39 +117,18 @@ namespace SpotivyCasus.Classes
         public void RemoveFriend(int index) 
         => ActiveUser.RemoveFriend(AllUsers[index]);
 
-        public void Play()
-        {
-            currentPlaying.Play();
-        }
+        public void Play() => currentPlaying.Play();
 
-        public void Pause()
-        {
-            currentPlaying.Pause();
-        }
+        public void Pause() => currentPlaying.Pause();
 
-        public void Stop()
-        {
-            currentPlaying.Stop();
-        }
+        public void Stop() => currentPlaying.Stop();
 
-        public void Next()
-        {
-            currentPlaying.Next();
-        }
+        public void Next() => currentPlaying.Next();
 
-        public int Length()
-        {
-            return currentPlaying.Length();
-        }
+        public int Length() => currentPlaying.Length();
 
-        public void SetShuffle(bool val) 
-        {
-            Shuffle = val;
-        }
+        public void SetShuffle(bool val) => Shuffle = val;
 
-        public void SetRepeat(bool val)
-        {
-            Repeat = val;
-        }
+        public void SetRepeat(bool val) => Repeat = val;
     }
 }
