@@ -92,6 +92,8 @@ namespace SpotivyCasus
             //User removes song from playlist
             client.ActiveUser.RemoveFromPlaylist(raindrops, 0);
 
+            //User views all owned playlists
+            client.ShowPlaylists();
 
         }
     } 
