@@ -85,6 +85,11 @@ namespace SpotivyCasus
             client.CreatePlaylist("Modern");
 
 
+            //User adds songs to playlist
+            client.ActiveUser.AddToPlaylist(eminem, 0);
+            client.ActiveUser.AddToPlaylist(raindrops, 0);
+
+
         }
     } 
 }
