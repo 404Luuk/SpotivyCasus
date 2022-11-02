@@ -114,6 +114,8 @@ namespace SpotivyCasus
             //User can view friendlist
             client.ShowFriends();
 
+            //User can remove friend from list
+            client.ActiveUser.RemoveFriend(hendrik); // :(
         }
     } 
 }
