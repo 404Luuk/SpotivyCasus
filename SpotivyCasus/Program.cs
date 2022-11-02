@@ -111,7 +111,8 @@ namespace SpotivyCasus
             client.ActiveUser.AddFriend(robert);
             client.ActiveUser.AddFriend(hendrik);
 
-
+            //User can view friendlist
+            client.ShowFriends();
 
         }
     } 

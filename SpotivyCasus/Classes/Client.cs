@@ -105,7 +105,7 @@ namespace SpotivyCasus.Classes
         => ActiveUser.RemovePlaylist(index);
 
         public void ShowFriends() 
-        => ActiveUser.ShowFriendlist();
+        => ActiveUser.ShowFriendlist().ForEach((friend)=> { Console.WriteLine(friend); });
 
 
         public void SelectFriend() 
