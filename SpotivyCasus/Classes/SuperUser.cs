@@ -33,12 +33,15 @@ namespace SpotivyCasus.Classes
             Playlist playlist = new Playlist(this, title);
             Playlists.Add(playlist);
 
+            Console.WriteLine("Playlist created: " + title);
+
             return playlist;
         }
 
         // Removes playlist from Playlists at index of num
         public void RemovePlaylist(int num) 
         {
+            Console.WriteLine("Playlist removed: " + Playlists[num].Title);
             Playlists.Remove(Playlists[num]);
         }
 

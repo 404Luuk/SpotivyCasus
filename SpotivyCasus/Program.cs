@@ -95,6 +95,11 @@ namespace SpotivyCasus
             //User views all owned playlists
             client.ShowPlaylists();
 
+            //User can delete playlist
+            client.ActiveUser.RemovePlaylist(2);
+
+
+
         }
     } 
 }
