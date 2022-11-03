@@ -33,7 +33,7 @@ namespace SpotivyCasus.Classes
 
         public void Play()
         {
-            playables[0].Play();
+            Playables.ForEach((playable) => { playable.Play(); });
         }
 
         public void Pause()

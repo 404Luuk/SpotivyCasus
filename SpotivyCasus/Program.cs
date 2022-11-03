@@ -122,6 +122,8 @@ namespace SpotivyCasus
             //User can see song name, artist and length in a song
             client.AllSongs[1].Play();
 
+            //User can delete playlist
+            client.ActiveUser.RemovePlaylist(1);
 
             
         }
