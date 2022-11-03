@@ -38,7 +38,7 @@ namespace SpotivyCasus.Classes
             SongGenre = genre;
         }
 
-        //Shows songs name and title
+        //Shows songs title, artist, and duration
         public override string ToString()
         {
             string AllArtists = "";

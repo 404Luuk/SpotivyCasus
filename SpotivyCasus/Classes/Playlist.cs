@@ -18,14 +18,17 @@ namespace SpotivyCasus.Classes
             Owner = owner;
         }
 
+        // Add playavle to playables list
         public void Add(iPlayable playable)
         {
             playables.Add(playable);
         }
 
-        public void Remove(iPlayable playable) 
+        // Remove playable from list
+        public void Remove(iPlayable playable)
         {
-            playables.Remove(playable);
+            if (playables.Contains(playable)) { playables.Remove(playable); }
+            else { Console.WriteLine("Item does not exist in List<T>"); }
         }
 
         public override string ToString()

@@ -9,7 +9,7 @@ namespace SpotivyCasus
         static void Main(string[] args)
         {
             /// Creating data to work with ///
-            
+
             //creating new users
             Person luuk = new("Luuk");
             Person robert = new("Robert");
@@ -76,7 +76,7 @@ namespace SpotivyCasus
             client.SetActiveUser(luuk);
 
 
-            //  User story actions  //
+            //  User story testing  //
 
 
             //User makes playlist
@@ -85,7 +85,7 @@ namespace SpotivyCasus
             client.CreatePlaylist("Modern");
 
             //User can add album to a playlist
-            client.ActiveUser.SelectPlaylist(0).Add(album1);
+            client.ActiveUser.AddToPlaylist(album1, 0);
 
             //User adds songs to playlist
             client.ActiveUser.AddToPlaylist(eminem, 0);
@@ -122,10 +122,6 @@ namespace SpotivyCasus
             //User can see song name, artist and length in a song
             client.AllSongs[1].Play();
 
-            //User can delete playlist
-            client.ActiveUser.RemovePlaylist(1);
-
-            
         }
-    } 
+    }
 }

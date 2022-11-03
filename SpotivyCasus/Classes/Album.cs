@@ -13,6 +13,7 @@ namespace SpotivyCasus.Classes
 
         internal List<Artist> Artists { get => artists; set => artists = value; }
 
+        // Loop over list of songs on construction and add each to Playables list
         public Album(List<Artist> albumArtists, string title, List<Song> songs) : base(title) 
         {
             Artists = albumArtists;
@@ -22,6 +23,7 @@ namespace SpotivyCasus.Classes
             });
         }
 
+        // Return list of artists
         public List<Artist> ShowArtists() 
         {
             return Artists;

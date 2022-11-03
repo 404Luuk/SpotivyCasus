@@ -20,17 +20,20 @@ namespace SpotivyCasus.Classes
         {
             Name = name;
         }
-
+        
+        //List of persons gets returned
         public List<Person> ShowFriendlist() 
         {
             return Friends;
         }
 
+        //List of playlists gets returned
         public List<Playlist> ShowPlaylist() 
         {
             return Playlists;
         }
 
+        //Playlist at playlists[index] gets returned
         public Playlist SelectPlaylist(int num) 
         {
             return Playlists[num];
@@ -38,14 +41,6 @@ namespace SpotivyCasus.Classes
 
         public override string ToString()
         {
-            //string Friendstring = "";
-            //string Lists = "";
-
-
-            //Friends.ForEach((friend) => { Friendstring += friend + ", "; });    
-            //playlists.ForEach((list) => { Lists += list + ", "; });
-
-            //return Name + " | " + Friendstring + " | " + Lists;
             return Name;
         }
     }

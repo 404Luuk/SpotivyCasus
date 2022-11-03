@@ -21,11 +21,13 @@ namespace SpotivyCasus.Classes
             Name = name;
         }
 
+        // Add song to artists songslist
         public void AddSong(Song song) 
         {
             Songs.Add(song);
         }
 
+        // Add albums to artists albumlist
         public void AddAlbum(Album album) 
         {
             Albums.Add(album);

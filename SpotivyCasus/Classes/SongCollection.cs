@@ -38,19 +38,20 @@ namespace SpotivyCasus.Classes
 
         public void Pause()
         {
-            playables[0].Pause();
+            Console.WriteLine("list has been paused");
         }
 
         public void Stop()
         {
-            playables[0].Stop();
+            Console.WriteLine("list has been stopped");
         }
 
         public void Next()
         {
-            playables[0].Next();
+            Console.WriteLine("playing next");
         }
 
+        //Return total playlength of collection
         public int Length()
         {
             int total = 0;
